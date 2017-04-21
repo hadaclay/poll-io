@@ -1,0 +1,28 @@
+{
+  "name": "poll-io",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Clayton Hadaway <me@hadaclay.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "express": "^4.15.2",
+    "prop-types": "^15.5.8"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "babel-node src/server.js",
+    "client": "babel-node src/start-client.js",
+    "lint": "eslint src client/src --ext .js,.jsx"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.4.0",
+    "concurrently": "^3.4.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3"
+  }
+}
