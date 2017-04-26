@@ -2,14 +2,22 @@ import React, { Component } from 'react'
 import { Container, Segment, Header } from 'semantic-ui-react'
 
 import PollList from '../components/PollList'
-import MOCK_POLLS from '../mock_data'
+//import MOCK_POLLS from '../mock_data'
 
 class Polls extends Component {
   constructor(props) {
     super(props)
+    
     this.state = {
-      polls: MOCK_POLLS
+      polls: []
     }
+  }
+  
+  componentWillMount() {
+    // eslint-disable-next-line
+    fetch('/api/polls') 
+      .then(res => res.json())
+      .then(polls => this.setState({ polls }))
   }
 
   render() {
