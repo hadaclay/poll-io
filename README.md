@@ -1,6 +1,8 @@
 # Poll.io
 A full-stack polling application where users can see results instantly. The back-end API is written in Node and the front-end is React/React Router. Written as a FreeCodeCamp project.
 
+![screenshot](/screenshot.png?raw=true)
+
 [Check it out!](https://poll-io.herokuapp.com)
 
 ### License
