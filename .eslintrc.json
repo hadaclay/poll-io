@@ -5,9 +5,20 @@
         "jsx-a11y",
         "import"
     ],
+    "globals": {
+        "browser": true,
+        "node": true
+    },
     "rules": {
         "semi": [2, "never"],
         "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
-        "comma-dangle": ["error", "never"]
+        "comma-dangle": ["error", "never"],
+        "no-underscore-dangle": "off",
+        "react/forbid-prop-types": [1, { "forbid": ["any"] }],
+        "import/no-named-as-default": "off",
+        "import/no-named-as-default-member": "off",
+        "no-shadow": "off",
+        "no-alert": "off",
+        "no-undef": "off"
     }
 }

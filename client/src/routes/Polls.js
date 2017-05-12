@@ -1,35 +1,39 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Container, Segment, Header } from 'semantic-ui-react'
 
 import PollList from '../components/PollList'
-//import MOCK_POLLS from '../mock_data'
 
 class Polls extends Component {
   constructor(props) {
     super(props)
-    
+
     this.state = {
-      polls: []
+      polls: [],
+      loading: true
     }
   }
-  
+
   componentWillMount() {
-    // eslint-disable-next-line
-    fetch('/api/polls') 
-      .then(res => res.json())
-      .then(polls => this.setState({ polls }))
+    fetch('/api/polls').then(res => res.json()).then((polls) => {
+      this.setState({ polls: polls.reverse(), loading: false })
+    })
   }
 
   render() {
     return (
       <Container style={{ paddingTop: '60px' }}>
-        <Segment>
+        <Segment loading={this.state.loading}>
           <Header textAlign="center" size="huge">Poll.io</Header>
           <PollList route={this.props.match} polls={this.state.polls} />
         </Segment>
       </Container>
     )
   }
+}
+
+Polls.propTypes = {
+  match: PropTypes.object.isRequired
 }
 
 export default Polls
