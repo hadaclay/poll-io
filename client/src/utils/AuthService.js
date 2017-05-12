@@ -4,7 +4,7 @@ export default class AuthService {
   constructor(clientId, domain) {
     this.lock = new Auth0Lock(clientId, domain, {
       auth: {
-        redirectUrl: 'https://poll-io.herokuapp.com/login/return',
+        redirectUrl: process.env.REACT_APP_REDIRECT_URL,
         responseType: 'token'
       }
     })
