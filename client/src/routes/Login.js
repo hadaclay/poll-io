@@ -16,7 +16,7 @@ class Login extends Component {
   }
 
   render() {
-    setTimeout(this.serverAuth, 3000)
+    setTimeout(this.serverAuth, 7000)
 
     if (this.props.auth.loggedIn()) return <Redirect to="/polls" />
 
