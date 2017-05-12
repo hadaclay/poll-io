@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "babel-node src/server.js",
-    "heroku-postbuild": "cd client/ && npm install && npm run build",
+    "heroku-postbuild": "cd client/ && npm install --only=dev && npm install && npm run build",
     "lint": "eslint src client/src --ext .js,.jsx",
     "format": "prettier-standard 'src/**/*.js'"
   },
