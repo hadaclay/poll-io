@@ -41,9 +41,7 @@ class Poll extends Component {
   handleChange = (e, { value }) => this.setState({ value })
 
   handleDelete = () => {
-    // eslint-disable-next-line
     let userID = JSON.parse(localStorage.getItem('profile')).user_id
-    // eslint-disable-next-line
     fetch(`/api/polls/${this.props.pollID}`, {
       headers: {
         userid: userID
@@ -78,11 +76,9 @@ class Poll extends Component {
       return
     }
 
-    // eslint-disable-next-line
     let userID = JSON.parse(localStorage.getItem('profile')) || null
     if (userID !== null) userID = userID.user_id
 
-    // eslint-disable-next-line
     fetch(`/api/vote/${this.props.pollID}`, {
       headers: {
         userid: userID,
@@ -101,14 +97,12 @@ class Poll extends Component {
 
   componentDidMount() {
     let isAuthed = false
-    // eslint-disable-next-line
     let userID = JSON.parse(localStorage.getItem('profile'))
     if (userID !== null) {
       userID = userID.user_id
       isAuthed = true
     }
 
-    // eslint-disable-next-line
     fetch(`/api/polls/${this.props.pollID}`, {
       headers: {
         userid: userID
